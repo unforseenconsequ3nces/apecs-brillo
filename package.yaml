@@ -1,0 +1,49 @@
+name:                apecs-brillo
+version:             0.1.1.1 # slight revisions
+git:                 "https://github.com/execute214/apecs-brillo"
+license:             BSD-3-Clause
+author:              "Execute"
+maintainer:          "execute@erisws.com"
+copyright:           "2017 Jonas Carpay, Execute"
+
+extra-doc-files:
+- README.md
+- CHANGELOG.md
+
+synopsis:            Apecs' gloss package, but adapted for brillo.
+category:            Game engine
+description:         Please see the README on Codeberg at <https://github.com/execute214/apecs-brillo#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- brillo >= 2 && < 3
+- brillo-rendering >= 2 && < 3
+- apecs >= 0.7 && < 0.11
+- apecs-physics >= 0.3 && < 5
+- linear >= 1.2 && < 2
+- containers >= 0.5 && < 0.8
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+tests:
+  apecs-brillo-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - apecs-brillo
